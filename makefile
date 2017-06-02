@@ -1,7 +1,9 @@
 .PHONY: clean all test 
 CFLAGS = -Wall -Werror -MP -MMD 
 
-all: bin/equation.exe 
+all: 
+	make bin/equation.exe 
+	bin/equation.exe 
 
 bin/equation.exe: build/main.o build/function.o 
 	g++ $(CFLAGS) build/main.o build/function.o -o bin/equation.exe 

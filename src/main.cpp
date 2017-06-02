@@ -12,6 +12,7 @@ int main ()
 	cin >> b;
 	cout << "c = ";
 	cin >> c;
+	Proverka(a,b,c);
 	cin.get();
 	return 0;
 }

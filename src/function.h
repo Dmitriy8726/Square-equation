@@ -3,6 +3,6 @@
 
 #include <iostream>
 
-int Proverka();
+int Proverka(int a,int b,int c);
 
 #endif
