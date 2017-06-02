@@ -2,7 +2,10 @@
 #define OTHERFUNC_H
 
 #include <iostream>
+#include <cmath>
 
-int Proverka(int a,int b,int c);
+int Discriment(int a,int b,int c);
+
+int Proverka(int D);
 
 #endif

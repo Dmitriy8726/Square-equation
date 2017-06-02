@@ -2,17 +2,22 @@
 
 using namespace std;
 
-int Proverka(int a,int b,int c)
+int Proverka(int D)
 {
-	int m = b*b - 4 * a * c;
-	if (m == 0) {
+	if (D == 0) {
 		return 0;
 	}
-	if (m < 0) {
+	if (D < 0) {
 		return 1;
 	}
-	if (m > 0) {
+	if (D > 0) {
 		return 2;
 	}
 	return 0;
+}
+
+int Discriment(int a,int b, int c)
+{
+	int D = b*b - 4 * a * c;
+	return D;
 }
