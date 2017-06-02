@@ -1,7 +1,5 @@
 #include "function.h"
 
-using namespace std;
-
 int Proverka(int D)
 {
 	if (D == 0) {
