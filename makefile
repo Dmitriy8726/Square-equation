@@ -12,21 +12,18 @@ build/main.o: src/main.c src/function.h
 build/function.o: src/function.c src/function.h 
 	gcc $(CFLAGS) -c src/function.c -o build/function.o 
 
-test: bin/equation_test.exe 
+test: 
+	make bin/equation_test.exe 
+	bin/equation_test.exe 
 
-bin/equation_test.exe: build/test/main.o build/test/function.o
-	gcc $(CFLAGS) build/test/main.o build/test/function_test.o build/test/function.o -o bin/equation_test.exe
+bin/equation_test.exe: build/test/main.o build/test/function_test.o
+	@gcc $(CFLAGS) build/test/main.o build/test/function_test.o build/function.o -o bin/equation_test.exe
 	
 build/test/main.o: test/main.c src/function.h
-	gcc $(CFLAGS) -I thirdparty -c test/main.c -o build/test/main.o 
-	gcc $(CFLAGS) -c src/function.h -o build/test/otherfunc.o 
+	@gcc $(CFLAGS) -I thirdparty -c test/main.c -o build/test/main.o 
 
-build/test/otherfunc_test.o: src/function.h test/function_test.c
-	gcc $(CFlAGS) -c -I thirdparty test/otherfunc_test.c -o build/test/otherfunc_test.o 
-
-build/test/otherfunc.o: src/function.h src/function.c
-	@gcc $(CFLAGS) -c src/function.c -o build/test/otherfunc.o 
-
+build/test/function_test.o: src/function.h test/function_test.c
+	@gcc $(CFlAGS) -I thirdparty -c test/function_test.c -o build/test/function_test.o 
 
 clean:
 	@echo "Cleaning files in build directory" 	
