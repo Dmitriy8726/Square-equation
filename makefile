@@ -7,7 +7,7 @@ bin/equation.exe: build/main.o build/function.o
 	gcc $(CFLAGS) build/main.o build/function.o -o bin/equation.exe 
 
 build/main.o: src/main.c src/function.h
-	gcc $(CFLAGS) -c src/main.c -o build/main.o -lm
+	gcc $(CFLAGS) -c src/main.c -lm -o build/main.o 
 
 build/function.o: src/function.c src/function.h 
 	gcc $(CFLAGS) -c src/function.c -o build/function.o 
