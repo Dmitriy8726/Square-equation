@@ -17,13 +17,13 @@ test:
 	bin/equation_test.exe 
 
 bin/equation_test.exe: build/test/main.o build/test/function_test.o
-	@gcc $(CFLAGS) build/test/main.o build/test/function_test.o build/function.o -o bin/equation_test.exe
+	@gcc $(CFLAGS) build/test/main.o build/test/function_test.o build/function.o -o bin/equation_test.exe -lm
 	
 build/test/main.o: test/main.c src/function.h
-	@gcc $(CFLAGS) -I thirdparty -c test/main.c -o build/test/main.o 
+	@gcc $(CFLAGS) -I thirdparty -c test/main.c -o build/test/main.o  -lm
 
 build/test/function_test.o: src/function.h test/function_test.c
-	@gcc $(CFlAGS) -I thirdparty -c test/function_test.c -o build/test/function_test.o 
+	@gcc $(CFlAGS) -I thirdparty -c test/function_test.c -o build/test/function_test.o  -lm 
 
 clean:
 	@echo "Cleaning files in build directory" 	
