@@ -10,7 +10,7 @@ build/main.o: src/main.c src/function.h
 	gcc $(CFLAGS) -c src/main.c -o build/main.o -lm
 
 build/function.o: src/function.c src/function.h 
-	gcc $(CFLAGS) -c src/function.c -o build/function.o 
+	gcc $(CFLAGS) -c src/function.c -o build/function.o -lm
 
 test: 
 	make bin/equation_test.exe 
