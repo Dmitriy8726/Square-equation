@@ -1,8 +1,10 @@
 #ifndef OTHERFUNC_H
 #define OTHERFUNC_H
 
-int Discriment(int a,int b,int c);
+float Discriment(float a,float b,float c);
 
-int Proverka(int D);
+int Proverka(float D);
+
+float Znachenie (float D, float a, float b, float c, int i);
 
 #endif
