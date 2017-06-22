@@ -8,11 +8,20 @@ int main ()
 	float x,D,a,b,c;
 	printf("a*(x*x)+b*x+c=0\n");
 	printf ("a = ");
-	scanf("%f",&a);
+	scanf("%f",&a);	
 	printf("b = ");
 	scanf("%f",&b);
 	printf("c = ");
 	scanf("%f",&c);
+	if ( (a == 0) && (b == 0)) {
+		printf("Has no roots");
+		return 0;
+	}
+	if (a == 0) {
+		x = c * -1 / b;
+		printf ("%.2f",x);
+		return 0;
+	}
 	D = Discriment(a,b,c);
 	i = Proverka(D);
 	switch (i) {
